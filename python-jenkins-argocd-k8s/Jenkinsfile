@@ -26,10 +26,11 @@ pipeline {
             }
         }
 
-        stage('Push the artifacts'){
+        stage('login & Push the artifacts'){
            steps{
                 script{
                     sh '''
+                    docker login credentialsId: 'docker'
                     echo 'Push to Repo'
                     docker push yjain75/demo:${BUILD_NUMBER}
                     '''
