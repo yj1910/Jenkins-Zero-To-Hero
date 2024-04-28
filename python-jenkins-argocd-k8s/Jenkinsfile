@@ -30,7 +30,7 @@ pipeline {
            steps{
                 script{
                     sh '''
-                    docker login credentialsId: 'docker'
+                    docker login -u yjain75 -p Yashjain@123
                     echo 'Push to Repo'
                     docker push yjain75/demo:${BUILD_NUMBER}
                     '''
